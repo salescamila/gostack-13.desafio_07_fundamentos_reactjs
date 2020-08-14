@@ -8,7 +8,13 @@ Essa será uma aplicação que irá se conectar ao backend do [Desafio 06](https
 
 
 ## Executando
-Em desenvolvimento
+- A Aplicação
+  * <b>`yarn`
+  * `yarn start` </b>
+
+- Os Testes
+  * <b>`yarn`
+  * `yarn test` </b>
 
 ## Instruções do Desafio
 <b>[Clique aqui](https://github.com/Rocketseat/bootcamp-gostack-desafios/tree/master/desafio-fundamentos-reactjs)
