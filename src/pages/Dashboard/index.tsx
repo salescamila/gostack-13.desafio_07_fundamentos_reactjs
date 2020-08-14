@@ -40,7 +40,10 @@ const Dashboard: React.FC = () => {
       const transactionsFormated = response.data.transactions.map(
         (transaction: Transaction) => ({
           ...transaction,
-          formattedValue: formatValue(transaction.value),
+          formattedValue:
+            transaction.type === 'outcome'
+              ? ` - ${formatValue(transaction.value)}`
+              : formatValue(transaction.value),
           formattedDate: new Date(transaction.created_at).toLocaleDateString(
             'pt-br',
           ),
@@ -104,7 +107,6 @@ const Dashboard: React.FC = () => {
                 <tr key={transaction.id}>
                   <td className="title">{transaction.title}</td>
                   <td className={transaction.type}>
-                    {transaction.type === 'outcome' && ' - '}
                     {transaction.formattedValue}
                   </td>
                   <td>{transaction.category.title}</td>
